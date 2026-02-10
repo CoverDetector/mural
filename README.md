@@ -23,6 +23,10 @@ Please find the main documentation on https://getmural.me.
    # Attach ESP32 (replace 3-2 with your bus ID)
    usbipd attach --wsl --busid 3-2
    ```
+   
+   **Troubleshooting:** If ESP32 still not detected:
+   - Rebuild container: `F1` → `Dev Containers: Rebuild Container`
+   - Or delete container in Docker Desktop → `F1` → `Dev Containers: Reopen in Container`
 
 3. **Build and Upload**
    ```bash
