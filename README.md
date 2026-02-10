@@ -2,6 +2,37 @@
 
 Please find the main documentation on https://getmural.me. 
 
+## Development Setup
+
+### Prerequisites
+- VS Code with Dev Containers extension
+- Docker Desktop
+- [USBIPD-WIN](https://github.com/dorssel/usbipd-win/releases) (for Windows USB passthrough)
+
+### Quick Start
+
+1. **Open in Dev Container**
+   - Press `F1` → `Dev Containers: Reopen in Container`
+   - Wait for container build (first time takes a few minutes)
+
+2. **Attach ESP32 (Windows)**
+   ```powershell
+   # List USB devices
+   usbipd list
+   
+   # Attach ESP32 (replace 3-2 with your bus ID)
+   usbipd attach --wsl --busid 3-2
+   ```
+
+3. **Build and Upload**
+   ```bash
+   # Build
+   platformio run
+   
+   # Upload to ESP32
+   platformio run --target upload --upload-port /dev/ttyUSB0
+   ```
+
 # Additional Information
 
 ## Positioning of the Drawing on the Wall
